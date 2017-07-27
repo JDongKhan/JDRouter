@@ -5,13 +5,13 @@ Pod::Spec.new do |spec|
   spec.homepage     = "https://github.com/wangjindong"
   spec.license      = "MIT"
   spec.author       = { "wangjindong" => "419591321@qq.com" }
-  spec.social_media_url   = "http://twitter.com/hundsun"
+  spec.social_media_url   = "http://twitter.com/wjd"
   spec.source = {:svn => '', :tag => ''}
 
   spec.platform = :ios,'7.0'
 
   spec.source_files = 'Framework/**/*.{h,m,mm}'
-  spec.resource = 'Framework/**/*.{png,xib,plist}'
+  #spec.resource = 'Framework/**/*.{png,xib,plist}'
 
   spec.requires_arc = true
   spec.ios.deployment_target = '7.0'
