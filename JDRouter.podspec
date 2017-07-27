@@ -1,9 +1,13 @@
 Pod::Spec.new do |spec|
   spec.name         = 'JDRouter'
-  spec.version      = '1.0.1'
+  spec.version      = '1.2.1'
   spec.summary      = 'JD'
+  spec.description  = <<-DESC
+			JDRouter
+                      DESC
+
   spec.homepage     = "https://github.com/wangjindong"
-  spec.license      = "MIT"
+  spec.license      = { :type => 'MIT', :file => 'LICENSE' }
   spec.author       = { "wangjindong" => "419591321@qq.com" }
   spec.social_media_url   = "http://twitter.com/wjd"
   spec.source = {:svn => '', :tag => ''}
@@ -11,7 +15,7 @@ Pod::Spec.new do |spec|
   spec.platform = :ios,'7.0'
 
   spec.source_files = 'Framework/**/*.{h,m,mm}'
-  #spec.resource = 'Framework/**/*.{png,xib,plist}'
+  spec.resource = 'Framework/**/*.{png,xib,plist}'
 
   spec.requires_arc = true
   spec.ios.deployment_target = '7.0'
