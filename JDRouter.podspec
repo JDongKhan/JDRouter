@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'JDRouter'
-  spec.version      = '1.2.1'
+  spec.version      = '1.2.2'
   spec.summary      = 'JD'
   spec.description  = <<-DESC
 			JDRouter
