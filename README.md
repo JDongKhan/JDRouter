@@ -10,11 +10,12 @@
 修改如下：
 
 ## 一、修改extractParametersFromURL方法
-  在查找匹配的时候将下面的代码,
-  因为下面的代码在处理user://user/:name和user://user/login.htm的时候，
+
+  因为下面的代码在处理类似user://user/:name和user://user/login.htm的时候，
   当open的是user://user/login.htm，就永远找不到
   
   下面方法应该算核心的了吧，其他代码也没啥东西了
+  
   ```c
           for (NSString* key in subRoutesKeys) {
             if ([key isEqualToString:pathComponent] || [key isEqualToString:MGJ_ROUTER_WILDCARD_CHARACTER]) {
@@ -83,15 +84,14 @@
         
   ```
   
-## 二、增加线程、锁
+## 二、增加线程队列、锁
 
  pthread_mutex_t mutex;
  dispatch_queue_t _queue;
  
 ## 三、增加为viewController服务的类别, 毕竟我们还是打开vc的比较多
 
- dispatch_queue_t _queue;
- dispatch_queue_t _queue;
+JDRouter+viewController
 
 ## 四、去掉userInfo，使其参数统一一层，便于各种情况统一调用
 
