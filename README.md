@@ -7,6 +7,10 @@
 
 很久以前根据MGJRouter修改、完善的方案，最近时间清闲下来就上传上来
 
+## cocoapods
+
+  pod 'JDRouter'
+
 修改如下：
 
 ## 一、修改extractParametersFromURL方法
