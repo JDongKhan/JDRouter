@@ -2,7 +2,7 @@
 //  JDRouter.h
 //  Pods
 //
-//  Created by 王金东 on 2016/7/27.
+//  Created by 王金东 on 2016/1/27.
 //
 //
 
@@ -24,6 +24,7 @@ typedef id (^JDRouterObjectAction)(NSDictionary *parameters);
 //取消注册
 + (void)unRegisterURI:(NSString *)URI;
 
++ (void)openURI:(NSString *)URI;
 //根据UI调用相应行为，并回调
 + (void)openURI:(NSString *)URI
      completion:(void (^)(id result))completion;

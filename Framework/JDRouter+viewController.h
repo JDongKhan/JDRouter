@@ -2,7 +2,7 @@
 //  JDRouter+viewController.h
 //  Pods
 //
-//  Created by 王金东 on 2016/7/27.
+//  Created by 王金东 on 2016/1/27.
 //
 //
 
@@ -21,6 +21,13 @@
 + (void)registerURI:(NSString *)URI
             action:(JDRouterAction)action
               toVc:(UIViewController *(^)())toVcClazz;
+
+
+
+
++ (void)openURI:(NSString *)URI
+         fromVc:(UIViewController *)fromVc;
+
 
 + (void)openURI:(NSString *)URI
          fromVc:(UIViewController *)fromVc

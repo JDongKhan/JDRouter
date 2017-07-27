@@ -2,7 +2,7 @@
 //  JDRouter.m
 //  Pods
 //
-//  Created by 王金东 on 2016/7/27.
+//  Created by 王金东 on 2016/1/27.
 //
 //
 
@@ -132,6 +132,9 @@ NSString *const JDRouterCompletion = @"JDRouterCompletion";
 
 
 #pragma mark ----------------------open-------------------
++ (void)openURI:(NSString *)URI {
+    [self openURI:URI completion:nil];
+}
 + (void)openURI:(NSString *)URI completion:(void (^)(id result))completion {
     [self openURI:URI userInfo:nil completion:completion];
 }

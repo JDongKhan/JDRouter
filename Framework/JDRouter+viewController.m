@@ -2,7 +2,7 @@
 //  JDRouter+viewController.m
 //  Pods
 //
-//  Created by 王金东 on 2016/7/27.
+//  Created by 王金东 on 2016/1/27.
 //
 //
 
@@ -42,7 +42,13 @@ NSString *const JDRouterFromViewController = @"JDRouterFromView";
             action(newP);
         }
     }];
-    
+}
+
+
+
++ (void)openURI:(NSString *)URI
+         fromVc:(UIViewController *)fromVc{
+    [self openURI:URI fromVc:fromVc completion:nil];
 }
 
 + (void)openURI:(NSString *)URI
