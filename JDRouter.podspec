@@ -3,7 +3,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "JDRouter"
-  s.version      = "1.2.5"
+  s.version      = "1.2.6"
   s.summary      = "JDRouter"
 
   s.description  = <<-DESC
@@ -24,9 +24,9 @@ Pod::Spec.new do |s|
     ss.public_header_files = 'Intent/**/*.h'
   end
 
-  s.subspec 'Router' do |ss|
-    ss.source_files = 'Framework/**/*.{h,m}'
-    ss.public_header_files = 'Framework/**/*.h'
+  s.subspec 'Router' do |cc|
+    cc.source_files = 'Router/**/*.{h,m}'
+    cc.public_header_files = 'Router/**/*.h'
   end
 
   s.frameworks = 'Foundation', 'UIKit'
