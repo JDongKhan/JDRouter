@@ -1,11 +1,11 @@
-# JDRouter
+# JDRouter & Intent
 
 谈及组件之间交互
 个人比较推崇用URI和配置文件来解决，因为更灵活，
 比如可以根据URI跳转到浏览器！
 比如配置文件可以放在服务器端，自由定制app的跳转逻辑、界面等！
 
-很久以前根据MGJRouter修改、完善的方案，最近时间清闲下来就上传上来
+很久以前根据MGJRouter修改、完善的方案，最近时间清闲下来就上传上来  
 
 ## cocoapods
 
@@ -104,3 +104,21 @@ JDRouter+viewController
 
 ## 最后、去掉一些自己不用的代码&修改其编码风格、命名等！
 个人喜好
+
+# 你以为完了？ 还有Intent文件夹你没看，JDIntent从URL来分析用NSInvocation来跳转，就不用动态注册了，也是从某位那借鉴来的
+
+
+```c
+
+ [JDIntent openUrl:@"Bababus://user/gotoNext" completion:^(id info) {
+        NSLog(@"%@",info);
+    }];
+```
+
+或执行到UserIntent类里面的 action:gotoNext:completion:方法里
+
+
+
+
+
+
