@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/wangjindong/Documents/github/JDRouter/Framework/JDRouter.m \
-  /Users/wangjindong/Documents/github/JDRouter/Framework/JDRouter.h
+  /Users/wangjindong/Documents/github/JDRouter/Router/JDRouter.m \
+  /Users/wangjindong/Documents/github/JDRouter/Router/JDRouter.h

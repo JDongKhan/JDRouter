@@ -153,7 +153,9 @@
     }
 }
 
-- (void)releaseCachedTargetWithTargetName:(NSString *)targetName {
+- (void)clearTarget:(NSString *)urlString {
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSString *targetName = url.host;
     NSString *tn = [NSString stringWithFormat:@"%@%@",[targetName substringToIndex:1].uppercaseString,[targetName substringFromIndex:1]];
     NSString *targetClassString = [NSString stringWithFormat:@"%@Intent", tn];
     CFDictionaryRemoveValue(self.cachedTarget, (__bridge const void *)(targetClassString));

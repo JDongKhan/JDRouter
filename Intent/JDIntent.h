@@ -37,4 +37,6 @@ typedef void(^JDIntentCompletion)(NSDictionary *info);
    completion:(JDIntentCompletion)completion;
 
 
+- (void)clearTarget:(NSString *)url;
+
 @end
