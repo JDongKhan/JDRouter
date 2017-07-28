@@ -3,7 +3,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "JDRouter"
-  s.version      = "1.2.7"
+  s.version      = "1.2.8"
   s.summary      = "JDRouter"
 
   s.description  = <<-DESC
