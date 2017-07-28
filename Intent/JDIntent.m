@@ -161,7 +161,6 @@
     CFDictionaryRemoveValue(self.cachedTarget, (__bridge const void *)(targetClassString));
 }
 
-#pragma mark - private methods
 - (id)safePerformAction:(SEL)action
                  target:(NSObject *)target
                  params:(NSDictionary *)params
