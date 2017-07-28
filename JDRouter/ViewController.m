@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "JDRouter+viewController.h"
 
+#import "JDIntent.h"
+
 @interface ViewController ()
 
 @end
@@ -61,6 +63,11 @@
 
 - (void)dealloc {
     NSLog(@"dealloc");
+}
+- (IBAction)intentAction:(id)sender {
+    [JDIntent openUrl:@"Bababus://user/gotoNext" completion:^(id info) {
+        NSLog(@"%@",info);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
