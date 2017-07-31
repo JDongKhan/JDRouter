@@ -18,22 +18,22 @@
 @interface JDRouter (viewController)
 
 
-+ (void)registerURI:(NSString *)URI
++ (void)registerUrl:(NSString *)Url
             action:(JDRouterAction)action
               toVc:(UIViewController *(^)())toVcClazz;
 
 
 
 
-+ (void)openURI:(NSString *)URI
++ (void)openUrl:(NSString *)Url
          fromVc:(UIViewController *)fromVc;
 
 
-+ (void)openURI:(NSString *)URI
++ (void)openUrl:(NSString *)Url
          fromVc:(UIViewController *)fromVc
      completion:(void (^)(id result))completion;
 
-+ (void)openURI:(NSString *)URI
++ (void)openUrl:(NSString *)Url
          fromVc:(UIViewController *)fromVc
        userInfo:(NSDictionary *)userInfo
      completion:(void (^)(id result))completion;

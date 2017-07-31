@@ -18,27 +18,27 @@ typedef id (^JDRouterObjectAction)(NSDictionary *parameters);
 
 @interface JDRouter : NSObject
 
-//为行为注册uri
-+ (void)registerURI:(NSString *)URI action:(JDRouterAction)action;
-+ (void)registerURI:(NSString *)URI objectAction:(JDRouterObjectAction)action;
+//为行为注册url
++ (void)registerUrl:(NSString *)Url action:(JDRouterAction)action;
++ (void)registerUrl:(NSString *)Url objectAction:(JDRouterObjectAction)action;
 //取消注册
-+ (void)unRegisterURI:(NSString *)URI;
++ (void)unRegisterUrl:(NSString *)Url;
 
-+ (void)openURI:(NSString *)URI;
++ (void)openUrl:(NSString *)Url;
 //根据UI调用相应行为，并回调
-+ (void)openURI:(NSString *)URI
++ (void)openUrl:(NSString *)Url
      completion:(void (^)(id result))completion;
 
-+ (void)openURI:(NSString *)URI
++ (void)openUrl:(NSString *)Url
    userInfo:(NSDictionary *)userInfo
      completion:(void (^)(id result))completion;
 
 
 //判断是否能打开
-+ (BOOL)canOpenURI:(NSString *)URI;
++ (BOOL)canOpenUrl:(NSString *)Url;
 
 //直接取
-+ (id)objectForURI:(NSString *)URI;
-+ (id)objectForURI:(NSString *)URI userInfo:(NSDictionary *)userInfo;
++ (id)objectForUrl:(NSString *)Url;
++ (id)objectForUrl:(NSString *)Url userInfo:(NSDictionary *)userInfo;
 
 @end

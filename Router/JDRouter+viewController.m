@@ -23,10 +23,10 @@ NSString *const JDRouterFromViewController = @"JDRouterFromView";
 
 @implementation JDRouter (viewController)
 
-+ (void)registerURI:(NSString *)URI
++ (void)registerUrl:(NSString *)Url
             action:(JDRouterAction)action
               toVc:(UIViewController *(^)())toVcClazz {
-    [JDRouter registerURI:URI action:^(NSDictionary *parameters) {
+    [JDRouter registerUrl:Url action:^(NSDictionary *parameters) {
         NSMutableDictionary *p = parameters.mutableCopy;
         UIViewController *fromVC = p[JDRouterFromViewController];
         UIViewController *toVC = toVcClazz();
@@ -46,18 +46,18 @@ NSString *const JDRouterFromViewController = @"JDRouterFromView";
 
 
 
-+ (void)openURI:(NSString *)URI
++ (void)openUrl:(NSString *)Url
          fromVc:(UIViewController *)fromVc{
-    [self openURI:URI fromVc:fromVc completion:nil];
+    [self openUrl:Url fromVc:fromVc completion:nil];
 }
 
-+ (void)openURI:(NSString *)URI
++ (void)openUrl:(NSString *)Url
          fromVc:(UIViewController *)fromVc
      completion:(void (^)(id result))completion {
-    [self openURI:URI fromVc:fromVc userInfo:nil completion:completion];
+    [self openUrl:Url fromVc:fromVc userInfo:nil completion:completion];
 }
 
-+ (void)openURI:(NSString *)URI
++ (void)openUrl:(NSString *)Url
          fromVc:(UIViewController *)fromVc
        userInfo:(NSDictionary *)userInfo
      completion:(void (^)(id result))completion {
@@ -65,6 +65,6 @@ NSString *const JDRouterFromViewController = @"JDRouterFromView";
     if(fromVc){
         p[JDRouterFromViewController] = fromVc;
     }
-    [JDRouter openURI:URI userInfo:p completion:completion];
+    [JDRouter openUrl:Url userInfo:p completion:completion];
 }
 @end

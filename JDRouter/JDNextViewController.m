@@ -18,7 +18,7 @@
 
 + (void)load {
 
-    [JDRouter registerURI:@"order://order" action:^(NSDictionary *parameters) {
+    [JDRouter registerUrl:@"order://order" action:^(NSDictionary *parameters) {
         NSLog(@"处理数据%@",parameters);
         void(^block)(id) = parameters[JDRouterCompletion];
         if(block)block(@"哈哈");

@@ -9,8 +9,8 @@
 #import "JDRouter.h"
 #import <pthread.h>
 
-#define JDROUTER_ADDURL(URI,action) {\
-NSMutableDictionary *routes = [self addURI:URI];\
+#define JDROUTER_ADDURL(Url,action) {\
+NSMutableDictionary *routes = [self addUrl:Url];\
 if (action && routes) {\
     routes[@"_"] = [action copy];\
 }\
@@ -20,7 +20,7 @@ static NSString *const JD_ROUTER_WILDCARD_CHARACTER = @"*";
 
 static NSString *specialCharacters = @"/?&.";
 
-NSString *const JDRouterURI = @"JDRouterURI";
+NSString *const JDRouterUrl = @"JDRouterUrl";
 NSString *const JDRouterBlock = @"JDRouterBlock";
 NSString *const JDRouterCompletion = @"JDRouterCompletion";
 
@@ -55,25 +55,25 @@ NSString *const JDRouterCompletion = @"JDRouterCompletion";
 }
 
 #pragma mark ------------------------register-----------------------
-+ (void)registerURI:(NSString *)URI action:(JDRouterAction)action {
-     [[self sharedInstance] registerURI:URI action:action];
++ (void)registerUrl:(NSString *)Url action:(JDRouterAction)action {
+     [[self sharedInstance] registerUrl:Url action:action];
 }
-+ (void)registerURI:(NSString *)URI objectAction:(JDRouterObjectAction)action {
-    [[self sharedInstance] registerURI:URI objectAction:action];
++ (void)registerUrl:(NSString *)Url objectAction:(JDRouterObjectAction)action {
+    [[self sharedInstance] registerUrl:Url objectAction:action];
 }
-- (void)registerURI:(NSString *)URI action:(JDRouterAction)action {
+- (void)registerUrl:(NSString *)Url action:(JDRouterAction)action {
     dispatch_async(_queue, ^{
-        JDROUTER_ADDURL(URI,action);
+        JDROUTER_ADDURL(Url,action);
     });
 }
-- (void)registerURI:(NSString *)URI objectAction:(JDRouterObjectAction)action {
+- (void)registerUrl:(NSString *)Url objectAction:(JDRouterObjectAction)action {
     dispatch_async(_queue, ^{
-        JDROUTER_ADDURL(URI,action);
+        JDROUTER_ADDURL(Url,action);
     });
 }
 
-- (NSMutableDictionary *)addURI:(NSString *)URI {
-    NSArray *pathComponents = [self pathComponentsFromURI:URI];
+- (NSMutableDictionary *)addUrl:(NSString *)Url {
+    NSArray *pathComponents = [self pathComponentsFromUrl:Url];
     NSMutableDictionary *subRoutes = self.routes;
     pthread_mutex_lock(&mutex);
     for (NSString *pathComponent in pathComponents) {
@@ -85,17 +85,17 @@ NSString *const JDRouterCompletion = @"JDRouterCompletion";
     pthread_mutex_unlock(&mutex);
     return subRoutes;
 }
-- (NSArray *)pathComponentsFromURI:(NSString*)URI {
+- (NSArray *)pathComponentsFromUrl:(NSString*)Url {
     NSMutableArray *pathComponents = [NSMutableArray array];
-    if ([URI rangeOfString:@"://"].location != NSNotFound) {
-        NSArray *pathSegments = [URI componentsSeparatedByString:@"://"];
+    if ([Url rangeOfString:@"://"].location != NSNotFound) {
+        NSArray *pathSegments = [Url componentsSeparatedByString:@"://"];
         [pathComponents addObject:pathSegments[0]];
-        URI = pathSegments.lastObject;
-        if (!URI.length) {
+        Url = pathSegments.lastObject;
+        if (!Url.length) {
             [pathComponents addObject:JD_ROUTER_WILDCARD_CHARACTER];
         }
     }
-    for (NSString *pathComponent in [[NSURL URLWithString:URI] pathComponents]) {
+    for (NSString *pathComponent in [[NSURL URLWithString:Url] pathComponents]) {
         if ([pathComponent isEqualToString:@"/"]) continue;
         if ([[pathComponent substringToIndex:1] isEqualToString:@"?"]) break;
         [pathComponents addObject:pathComponent];
@@ -104,11 +104,11 @@ NSString *const JDRouterCompletion = @"JDRouterCompletion";
 }
 
 #pragma mark ------------------------unRegister-----------------------
-+ (void)unRegisterURI:(NSString *)URI {
-     [[self sharedInstance] unRegisterURI:URI];
++ (void)unRegisterUrl:(NSString *)Url {
+     [[self sharedInstance] unRegisterUrl:Url];
 }
-- (void)unRegisterURI:(NSString *)URI {
-    NSMutableArray *pathComponents = [NSMutableArray arrayWithArray:[self pathComponentsFromURI:URI]];
+- (void)unRegisterUrl:(NSString *)Url {
+    NSMutableArray *pathComponents = [NSMutableArray arrayWithArray:[self pathComponentsFromUrl:Url]];
     // 只删除该 pattern 的最后一级
     if (pathComponents.count >= 1) {
         // 假如 URLPattern 为 a/b/c, components 就是 @"a.b.c" 正好可以作为 KVC 的 key
@@ -132,17 +132,17 @@ NSString *const JDRouterCompletion = @"JDRouterCompletion";
 
 
 #pragma mark ----------------------open-------------------
-+ (void)openURI:(NSString *)URI {
-    [self openURI:URI completion:nil];
++ (void)openUrl:(NSString *)Url {
+    [self openUrl:Url completion:nil];
 }
-+ (void)openURI:(NSString *)URI completion:(void (^)(id result))completion {
-    [self openURI:URI userInfo:nil completion:completion];
++ (void)openUrl:(NSString *)Url completion:(void (^)(id result))completion {
+    [self openUrl:Url userInfo:nil completion:completion];
 }
-+ (void)openURI:(NSString *)URI
++ (void)openUrl:(NSString *)Url
    userInfo:(NSDictionary *)userInfo
      completion:(void (^)(id result))completion {
-    URI = [URI stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSMutableDictionary *parameters = [[self sharedInstance] extractParametersFromURL:URI];
+    Url = [Url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSMutableDictionary *parameters = [[self sharedInstance] extractParametersFromURL:Url];
     [parameters enumerateKeysAndObjectsUsingBlock:^(id key, NSString *obj, BOOL *stop) {
         if ([obj isKindOfClass:[NSString class]]) {
             parameters[key] = [obj stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -165,11 +165,11 @@ NSString *const JDRouterCompletion = @"JDRouterCompletion";
 
 #pragma mark - Utils
 
-- (NSMutableDictionary *)extractParametersFromURL:(NSString *)URI {
+- (NSMutableDictionary *)extractParametersFromURL:(NSString *)Url {
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    parameters[JDRouterURI] = URI;
+    parameters[JDRouterUrl] = Url;
     NSMutableDictionary *subRoutes = self.routes;
-    NSArray *pathComponents = [self pathComponentsFromURI:URI];
+    NSArray *pathComponents = [self pathComponentsFromUrl:Url];
     BOOL found = NO;
     for (NSString *pathComponent in pathComponents) {
         // 对 key 进行排序，这样可以把 ~ 放到最后
@@ -216,7 +216,7 @@ NSString *const JDRouterCompletion = @"JDRouterCompletion";
     }
     
     // Extract Params From Query.
-    NSArray<NSURLQueryItem *> *queryItems = [[NSURLComponents alloc] initWithURL:[[NSURL alloc] initWithString:URI] resolvingAgainstBaseURL:false].queryItems;
+    NSArray<NSURLQueryItem *> *queryItems = [[NSURLComponents alloc] initWithURL:[[NSURL alloc] initWithString:Url] resolvingAgainstBaseURL:false].queryItems;
     
     for (NSURLQueryItem *item in queryItems) {
         parameters[item.name] = item.value;
@@ -229,8 +229,8 @@ NSString *const JDRouterCompletion = @"JDRouterCompletion";
 }
 
 
-+ (BOOL)canOpenURI:(NSString *)URI {
-    NSDictionary *p = [[self sharedInstance] extractParametersFromURL:URI];
++ (BOOL)canOpenUrl:(NSString *)Url {
+    NSDictionary *p = [[self sharedInstance] extractParametersFromURL:Url];
     return p[JDRouterBlock] ? YES : NO;
 }
 
@@ -244,13 +244,13 @@ NSString *const JDRouterCompletion = @"JDRouterCompletion";
 
 #pragma mark-----------------------------------------
 
-+ (id)objectForURI:(NSString *)URI {
-    return [self objectForURI:URI userInfo:nil];
++ (id)objectForUrl:(NSString *)Url {
+    return [self objectForUrl:Url userInfo:nil];
 }
-+ (id)objectForURI:(NSString *)URI userInfo:(NSDictionary *)userInfo {
++ (id)objectForUrl:(NSString *)Url userInfo:(NSDictionary *)userInfo {
     JDRouter *router = [JDRouter sharedInstance];
-    URI = [URI stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSMutableDictionary *parameters = [router extractParametersFromURL:URI];
+    Url = [Url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSMutableDictionary *parameters = [router extractParametersFromURL:Url];
     [parameters enumerateKeysAndObjectsUsingBlock:^(id key, NSString *obj, BOOL *stop) {
         if ([obj isKindOfClass:[NSString class]]) {
             parameters[key] = [obj stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
