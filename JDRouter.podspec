@@ -29,6 +29,11 @@ Pod::Spec.new do |s|
     cc.public_header_files = 'Router/**/*.h'
   end
 
+ s.subspec 'Protocol' do |cc|
+    cc.source_files = 'Protocol/**/*.{h,m}'
+    cc.public_header_files = 'Protocol/**/*.h'
+  end
+
   s.frameworks = 'Foundation', 'UIKit'
   s.requires_arc = true
 

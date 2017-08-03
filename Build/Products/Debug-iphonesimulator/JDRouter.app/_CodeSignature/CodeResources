@@ -18,7 +18,7 @@
 		</data>
 		<key>Base.lproj/Main.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib</key>
 		<data>
-		wLz6HUjKpWWf8mN+emeM+gUtz58=
+		48pW0hDHROTPor80QAo3AgguZU4=
 		</data>
 		<key>Base.lproj/Main.storyboardc/Info.plist</key>
 		<data>
@@ -26,11 +26,23 @@
 		</data>
 		<key>Base.lproj/Main.storyboardc/UINavigationController-Zny-gc-t7l.nib</key>
 		<data>
-		V5F61Jx2VbdTvzwHESYNukkqeqg=
+		STrAL8XVOxlA6Z/hvOCWShOIEpQ=
 		</data>
 		<key>Info.plist</key>
 		<data>
 		aLivRtGqO8VeEIJ3C5PBLQu026w=
+		</data>
+		<key>JDIntentViewController.nib</key>
+		<data>
+		rdonUX493w3aZWXmoiI7maTyKBc=
+		</data>
+		<key>JDProtocolViewController.nib</key>
+		<data>
+		LUR4dcXgzjb6Xk9D9D7UdtOXvO4=
+		</data>
+		<key>JDRouterViewController.nib</key>
+		<data>
+		U7RbZeEz6kg7cELa/x+/bXED8BE=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -76,11 +88,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			wLz6HUjKpWWf8mN+emeM+gUtz58=
+			48pW0hDHROTPor80QAo3AgguZU4=
 			</data>
 			<key>hash2</key>
 			<data>
-			kPzebcQBlC9By+t/E7KurMjvO9NVp9g8CNvB64veAlQ=
+			YbT1YADosuHb4XVQZCUB/6Ou/pg7S1e2IktEJFLsy+A=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/Info.plist</key>
@@ -98,11 +110,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			V5F61Jx2VbdTvzwHESYNukkqeqg=
+			STrAL8XVOxlA6Z/hvOCWShOIEpQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			w++k8jVOjDaLTU4RF4Ax2zL4iuIFMTliVE23NtJTjbg=
+			FERI4ss3rsvcwi0EseUGDE+FlYaBhL+2sh99PCgD8Oc=
+			</data>
+		</dict>
+		<key>JDIntentViewController.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			rdonUX493w3aZWXmoiI7maTyKBc=
+			</data>
+			<key>hash2</key>
+			<data>
+			vWd1WNO8KuVZ7YGtEpsyizHnye1xbrNgv3mvz7bQCbg=
+			</data>
+		</dict>
+		<key>JDProtocolViewController.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			LUR4dcXgzjb6Xk9D9D7UdtOXvO4=
+			</data>
+			<key>hash2</key>
+			<data>
+			6PzcEuqQgARjeabp+arhJeMoTmB5Q9rKyD50c1s1rUY=
+			</data>
+		</dict>
+		<key>JDRouterViewController.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			U7RbZeEz6kg7cELa/x+/bXED8BE=
+			</data>
+			<key>hash2</key>
+			<data>
+			C7UUbRi//wnopfE9YyL9T2D51IqZ5kHWogtufbc2mZQ=
 			</data>
 		</dict>
 	</dict>

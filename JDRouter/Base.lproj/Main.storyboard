@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,73 +21,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkg-nD-3ke">
-                                <rect key="frame" x="51" y="107" width="123" height="30"/>
-                                <state key="normal" title="带UserInfo"/>
-                                <connections>
-                                    <action selector="btnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YYF-Lp-aPK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1d9-yQ-lAg">
-                                <rect key="frame" x="51" y="154" width="123" height="30"/>
-                                <state key="normal" title="地址传参1"/>
-                                <connections>
-                                    <action selector="btn2Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zJa-Ba-KwJ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZS-jd-QDA">
-                                <rect key="frame" x="51" y="201" width="123" height="30"/>
-                                <state key="normal" title="准确找到地址"/>
-                                <connections>
-                                    <action selector="btn3Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Odf-xs-KD3"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KD8-9e-61h">
-                                <rect key="frame" x="51" y="249" width="123" height="30"/>
-                                <state key="normal" title="准确找到地址"/>
-                                <connections>
-                                    <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mmI-Po-uha"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2R0-9a-4v0">
-                                <rect key="frame" x="51" y="314" width="123" height="30"/>
-                                <state key="normal" title="跳转到下一个界面"/>
-                                <connections>
-                                    <action selector="gotoNextAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rga-W7-U2o"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcp-dU-Tu2">
-                                <rect key="frame" x="51" y="466" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="intent"/>
-                                <connections>
-                                    <action selector="intentAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EUp-jv-XH8"/>
-                                </connections>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yDz-pY-oAg">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Xkg-nD-3ke" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="35" id="61Z-Se-szZ"/>
-                            <constraint firstItem="KD8-9e-61h" firstAttribute="width" secondItem="jZS-jd-QDA" secondAttribute="width" id="7vg-DQ-ZWC"/>
-                            <constraint firstItem="jZS-jd-QDA" firstAttribute="height" secondItem="1d9-yQ-lAg" secondAttribute="height" id="7xl-hj-1Re"/>
-                            <constraint firstItem="2R0-9a-4v0" firstAttribute="height" secondItem="KD8-9e-61h" secondAttribute="height" id="BR8-D2-Vmr"/>
-                            <constraint firstItem="2R0-9a-4v0" firstAttribute="top" secondItem="KD8-9e-61h" secondAttribute="bottom" constant="35" id="F3e-iw-F7i"/>
-                            <constraint firstItem="Xkg-nD-3ke" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="43" id="FT5-iW-uIA"/>
-                            <constraint firstItem="1d9-yQ-lAg" firstAttribute="top" secondItem="Xkg-nD-3ke" secondAttribute="bottom" constant="17" id="INL-UW-feg"/>
-                            <constraint firstItem="2R0-9a-4v0" firstAttribute="leading" secondItem="KD8-9e-61h" secondAttribute="leading" id="MJo-9C-EoM"/>
-                            <constraint firstItem="KD8-9e-61h" firstAttribute="leading" secondItem="jZS-jd-QDA" secondAttribute="leading" id="Rgh-AG-gUs"/>
-                            <constraint firstItem="jZS-jd-QDA" firstAttribute="top" secondItem="1d9-yQ-lAg" secondAttribute="bottom" constant="17" id="UlH-pE-NTa"/>
-                            <constraint firstItem="jZS-jd-QDA" firstAttribute="leading" secondItem="1d9-yQ-lAg" secondAttribute="leading" id="UrN-jv-efe"/>
-                            <constraint firstItem="KD8-9e-61h" firstAttribute="top" secondItem="jZS-jd-QDA" secondAttribute="bottom" constant="18" id="Vg4-2S-efY"/>
-                            <constraint firstItem="1d9-yQ-lAg" firstAttribute="leading" secondItem="Xkg-nD-3ke" secondAttribute="leading" id="c8w-ap-XNt"/>
-                            <constraint firstItem="1d9-yQ-lAg" firstAttribute="width" secondItem="Xkg-nD-3ke" secondAttribute="width" id="fmn-3B-03j"/>
-                            <constraint firstItem="jZS-jd-QDA" firstAttribute="width" secondItem="1d9-yQ-lAg" secondAttribute="width" id="j5N-i5-JRg"/>
-                            <constraint firstItem="KD8-9e-61h" firstAttribute="height" secondItem="jZS-jd-QDA" secondAttribute="height" id="kFh-Jy-KXW"/>
-                            <constraint firstItem="2R0-9a-4v0" firstAttribute="width" secondItem="KD8-9e-61h" secondAttribute="width" id="mdd-JM-juU"/>
-                            <constraint firstItem="1d9-yQ-lAg" firstAttribute="height" secondItem="Xkg-nD-3ke" secondAttribute="height" id="pua-la-htr"/>
+                            <constraint firstAttribute="trailing" secondItem="yDz-pY-oAg" secondAttribute="trailing" id="XFQ-DN-M4e"/>
+                            <constraint firstItem="yDz-pY-oAg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="YuO-Tc-cvh"/>
+                            <constraint firstItem="yDz-pY-oAg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="hmZ-oW-h3f"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yDz-pY-oAg" secondAttribute="bottom" id="xhr-BR-v5C"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xD6-1V-KFk"/>
+                    <connections>
+                        <outlet property="tableView" destination="yDz-pY-oAg" id="VJb-BA-pVX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

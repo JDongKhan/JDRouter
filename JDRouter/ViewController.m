@@ -7,11 +7,15 @@
 //
 
 #import "ViewController.h"
-#import "JDRouter+viewController.h"
+#import "JDRouterViewController.h"
+#import "JDIntentViewController.h"
+#import "JDProtocolViewController.h"
 
-#import "JDIntent.h"
 
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSArray *itemArray;
 
 @end
 
@@ -19,56 +23,56 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [JDRouter registerUrl:@"user://user/:name" action:^(NSDictionary *parameters) {
-        NSLog(@"处理数据11%@",parameters);
-        void(^block)(id) = parameters[JDRouterCompletion];
-        if(block)block(@"哈哈");
-    }];
-    [JDRouter registerUrl:@"user://user/login.htm" action:^(NSDictionary *parameters) {
-        NSLog(@"处理数据21%@",parameters);
-        void(^block)(id) = parameters[JDRouterCompletion];
-        if(block)block(@"哈哈");
-    }];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
-    
+    __weak typeof (self) _weakSelf = self;
+    self.itemArray = @[
+                       @{
+                           @"title" : @"Router",
+                           @"select" : ^(){
+                               [_weakSelf.navigationController pushViewController:[[JDRouterViewController alloc] init] animated:YES];
+                           }
+                           },
+                       @{
+                           @"title" : @"Intent",
+                           @"select" : ^(){
+                               [_weakSelf.navigationController pushViewController:[[JDIntentViewController alloc] init] animated:YES];
+                           }
+                           },
+                       @{
+                           @"title" : @"Protocol",
+                           @"select" : ^(){
+                               [_weakSelf.navigationController pushViewController:[[JDProtocolViewController alloc] init] animated:YES];
+                           }
+                           }
+                       ];
       
     // Do any additional setup after loading the view, typically from a nib.
-}
-- (IBAction)btnAction:(id)sender {
-    [JDRouter openUrl:@"user://user/:name" userInfo:@{@"name":@"wjd"} completion:^(id result) {
-        NSLog(@"返回数据1%@",result);
-    }];
-}
-- (IBAction)btn2Action:(id)sender {
-    [JDRouter openUrl:@"user://user/wjd" completion:^(id result) {
-        NSLog(@"返回数据2%@",result);
-    }];
-}
-- (IBAction)btn3Action:(id)sender {
-    [JDRouter openUrl:@"user://user/wjd?id=100&uuid=88787" completion:^(id result) {
-        NSLog(@"返回数据3%@",result);
-    }];
-}
-- (IBAction)loginAction:(id)sender {
-    [JDRouter openUrl:@"user://user/login.htm?id=100&uuid=88787" completion:^(id result) {
-        NSLog(@"返回数据4%@",result);
-    }];
-}
-- (IBAction)gotoNextAction:(id)sender {
-    
-    [JDRouter openUrl:@"order://order?name=wjd" fromVc:self completion:^(id result) {
-        NSLog(@"返回数据5%@",result);
-    }];
 }
 
 - (void)dealloc {
     NSLog(@"dealloc");
 }
-- (IBAction)intentAction:(id)sender {
-    [JDIntent openUrl:@"Bababus://user/gotoNext" from:self completion:^(id info) {
-        NSLog(@"%@",info);
-    }];
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.itemArray.count;
 }
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
+    cell.textLabel.text = self.itemArray[indexPath.row][@"title"];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    void(^block)(void) = self.itemArray[indexPath.row][@"select"];
+    if (block) {
+        block();
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

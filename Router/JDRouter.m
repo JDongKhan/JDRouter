@@ -9,12 +9,12 @@
 #import "JDRouter.h"
 #import <pthread.h>
 
-#define JDROUTER_ADDURL(Url,action) {\
+#define JDROUTER_ADDURL(Url,action) do{\
 NSMutableDictionary *routes = [self addUrl:Url];\
 if (action && routes) {\
     routes[@"_"] = [action copy];\
 }\
-}
+}while(0)
 //改成* 因为浏览器可以支持* 并不支持~
 static NSString *const JD_ROUTER_WILDCARD_CHARACTER = @"*";
 
