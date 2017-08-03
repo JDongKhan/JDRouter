@@ -179,6 +179,32 @@
     [invocation setSelector:action];
     [invocation setTarget:target];
     [invocation invoke];
+    
+    const char* retType = [methodSig methodReturnType];
+    if (strcmp(retType, @encode(void)) == 0) {
+        return nil;
+    }
+    if (strcmp(retType, @encode(NSInteger)) == 0){
+        NSInteger result = 0;
+        [invocation getReturnValue:&result];
+        return @(result);
+    }
+    if (strcmp(retType, @encode(BOOL)) == 0) {
+        BOOL result = 0;
+        [invocation getReturnValue:&result];
+        return @(result);
+    }
+    if (strcmp(retType, @encode(CGFloat)) == 0) {
+        CGFloat result = 0;
+        [invocation getReturnValue:&result];
+        return @(result);
+    }
+    if (strcmp(retType, @encode(NSUInteger)) == 0) {
+        NSUInteger result = 0;
+        [invocation getReturnValue:&result];
+        return @(result);
+    }
+    
     __unsafe_unretained id result;
     [invocation getReturnValue:&result];
     return result;
