@@ -104,7 +104,7 @@ JDRouter+viewController
 
 最后、去掉一些自己不用的代码&修改其编码风格、命名等！个人喜好
 
-# 二、JDIntent从URL来分析用NSInvocation来跳转，就不用动态注册了，也是从某位那借鉴来的
+# 二、JDIntent  从URL来分析用NSInvocation来跳转，就不用动态注册了，也是从某位那借鉴来的
 
 
 ```c
