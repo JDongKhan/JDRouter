@@ -120,8 +120,10 @@ JDRouter+viewController
 
 # 三、Protocol实现，模仿spring的机制。
   1、定义协议比如JDUserProtocol
+  
   2、定义类实现JDUserProtocol比如JDUserService，在.m里面加入@JD_Service(JDUserProtocol,JDUserService)
       进行注册
+      
   3、通过JDServiceCenter中取得实例进行调用。
       id<JDUserProtocol> user = [JDServiceCenter serviceForProtocol:@protocol(JDUserProtocol)];
     NSString *userName = user.userName;
