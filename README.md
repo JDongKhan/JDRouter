@@ -1,4 +1,4 @@
-# JDRouter & Intent
+# 一、JDRouter & Intent
 
 谈及组件之间交互
 个人比较推崇用URI和配置文件来解决，因为更灵活，
@@ -105,7 +105,7 @@ JDRouter+viewController
 ## 最后、去掉一些自己不用的代码&修改其编码风格、命名等！
 个人喜好
 
-# 你以为完了？ 还有Intent文件夹你没看，JDIntent从URL来分析用NSInvocation来跳转，就不用动态注册了，也是从某位那借鉴来的
+# 二、JDIntent从URL来分析用NSInvocation来跳转，就不用动态注册了，也是从某位那借鉴来的
 
 
 ```c
@@ -119,6 +119,12 @@ JDRouter+viewController
 
 
 
-
+# 三、Protocol实现，模仿spring的机制。
+  1、定义协议比如JDUserProtocol
+  2、定义类实现JDUserProtocol比如JDUserService，在.m里面加入@JD_Service(JDUserProtocol,JDUserService)
+      进行注册
+  3、通过JDServiceCenter中取得实例进行调用。
+      id<JDUserProtocol> user = [JDServiceCenter serviceForProtocol:@protocol(JDUserProtocol)];
+    NSString *userName = user.userName;
 
 
