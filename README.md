@@ -13,7 +13,7 @@
 
 修改如下：
 
-## 一、修改extractParametersFromURL方法
+ 1）、修改extractParametersFromURL方法
 
   因为下面的代码在处理类似user://user/:name和user://user/login.htm的时候，
   当open的是user://user/login.htm，就永远找不到
@@ -87,23 +87,22 @@
         }
         
   ```
-  
-## 二、增加线程队列、锁
+  
+  2）、增加线程队列、锁
 
  pthread_mutex_t mutex;
  dispatch_queue_t _queue;
  
-## 三、增加为viewController服务的类别, 毕竟我们还是打开vc的比较多
+ 3）、增加为viewController服务的类别, 毕竟我们还是打开vc的比较多
 
 JDRouter+viewController
 
-## 四、去掉userInfo，使其参数统一一层，便于各种情况统一调用
+4）、去掉userInfo，使其参数统一一层，便于各种情况统一调用
 
-## 五、修改canOpenURI的实现
+5）、修改canOpenURI的实现
 因为作者的怎么都能打开，其实这个方法意义不大,根据提供方提供的action是否存在来判断感觉好点
 
-## 最后、去掉一些自己不用的代码&修改其编码风格、命名等！
-个人喜好
+最后、去掉一些自己不用的代码&修改其编码风格、命名等！个人喜好
 
 # 二、JDIntent从URL来分析用NSInvocation来跳转，就不用动态注册了，也是从某位那借鉴来的
 
