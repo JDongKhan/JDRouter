@@ -125,6 +125,7 @@ JDRouter+viewController
       进行注册
       
   3、通过JDServiceCenter中取得实例进行调用。
+  
       id<JDUserProtocol> user = [JDServiceCenter serviceForProtocol:@protocol(JDUserProtocol)];
     NSString *userName = user.userName;
 
