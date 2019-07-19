@@ -12,7 +12,12 @@ typedef void(^JDIntentCompletion)(NSDictionary *info);
 
 @interface JDIntent : NSObject
 
-+ (instancetype)sharedInstance;
+/**
+ 支持的schemes
+
+ @param schemes schemes
+ */
++ (void)supportScheme:(NSArray<NSString *> *)schemes;
 
 + (id)openUrl:(NSString *)url;
 
@@ -37,6 +42,6 @@ typedef void(^JDIntentCompletion)(NSDictionary *info);
    completion:(JDIntentCompletion)completion;
 
 
-- (void)clearTarget:(NSString *)url;
++ (void)clearTarget:(NSString *)url;
 
 @end

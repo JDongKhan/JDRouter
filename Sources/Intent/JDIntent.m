@@ -10,6 +10,8 @@
 #import <objc/runtime.h>
 #import <UIKit/UIKit.h>
 
+static NSArray<NSString *> *_kIntentSchemes = nil;
+
 @interface JDIntent ()
 
 @end
@@ -30,35 +32,51 @@
  Bababus://user/gotoNext
  */
 
++ (void)supportScheme:(NSArray<NSString *> *)schemes {
+    _kIntentSchemes = schemes;
+}
+
 + (id)openUrl:(NSString *)url {
     return [self openUrl:url completion:nil];
 }
+
 + (id)openUrl:(NSString *)url from:(id)from {
     return [self openUrl:url from:from completion:nil];
 }
+
 + (id)openUrl:(NSString *)url
          from:(id)from
    completion:(JDIntentCompletion)completion {
     return [self openUrl:url userInfo:nil from:from completion:completion];
 }
+
 + (id)openUrl:(NSString *)url  userInfo:(NSDictionary *)userInfo {
     return [self openUrl:url userInfo:userInfo  completion:nil];
 }
+
 + (id)openUrl:(NSString *)url
      userInfo:(NSDictionary *)userInfo
    completion:(JDIntentCompletion)completion {
    return [self openUrl:url userInfo:userInfo from:nil completion:completion];
 }
+
 + (id)openUrl:(NSString *)url
    completion:(JDIntentCompletion)completion {
     return [self openUrl:url from:nil completion:completion];
 }
+
 + (id)openUrl:(NSString *)urlString
      userInfo:(NSDictionary *)userInfo
          from:(id)from
    completion:(JDIntentCompletion)completion {
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:userInfo];
     NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSString *scheme = url.scheme;
+    
+    if (_kIntentSchemes != nil && ![_kIntentSchemes containsObject:scheme]) {
+        return nil;
+    }
     
     NSArray<NSURLQueryItem *> *queryItems = [[NSURLComponents alloc] initWithURL:url resolvingAgainstBaseURL:false].queryItems;
     for (NSURLQueryItem *item in queryItems) {
@@ -101,7 +119,7 @@
                       params:params
                         from:from
                   completion:completion ];
-    if(result){
+    if (result) {
         return result;
     }
     result = [self target:target
@@ -109,11 +127,11 @@
                    params:params
                      from:from
                completion:completion ];
-    if(result){
+    if (result) {
         return result;
     }
     SEL action = NSSelectorFromString(@"from:notFound:");
-    if([target respondsToSelector:action]) {
+    if ([target respondsToSelector:action]) {
         return [self safePerformAction:action target:target params:params from:from completion:nil];
     }
     NSLog(@"我尽力了，找不到你的Intent配置");
@@ -136,29 +154,29 @@
                                 params:params
                                   from:from
                             completion:completion ];
-    }else{
+    } else {
         // 有可能target是Swift对象
         NSString *an = [NSString stringWithFormat:@"%@%@",[actionName substringToIndex:1].uppercaseString,[actionName substringFromIndex:1]];
         actionString = [NSString stringWithFormat:@"from%@WithParams:", an];
         action = NSSelectorFromString(actionString);
-        if([target respondsToSelector:action]) {
+        if ([target respondsToSelector:action]) {
             return [self safePerformAction:action
                                     target:target
                                     params:params
                                       from:from
                                 completion:completion ];
-        }else{
+        } else {
             return nil;
         }
     }
 }
 
-- (void)clearTarget:(NSString *)urlString {
++ (void)clearTarget:(NSString *)urlString {
     NSURL *url = [NSURL URLWithString:urlString];
     NSString *targetName = url.host;
     NSString *tn = [NSString stringWithFormat:@"%@%@",[targetName substringToIndex:1].uppercaseString,[targetName substringFromIndex:1]];
     NSString *targetClassString = [NSString stringWithFormat:@"%@Intent", tn];
-    CFDictionaryRemoveValue(self.cachedTarget, (__bridge const void *)(targetClassString));
+    CFDictionaryRemoveValue([JDIntent sharedInstance].cachedTarget, (__bridge const void *)(targetClassString));
 }
 
 - (id)safePerformAction:(SEL)action
