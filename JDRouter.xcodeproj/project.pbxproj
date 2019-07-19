@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4D0B08F41F2B202200EF754C /* JDIntent.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0B08F11F2B202200EF754C /* JDIntent.m */; };
-		4D0B08FE1F2B322A00EF754C /* JDRouter+viewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0B08FB1F2B322A00EF754C /* JDRouter+viewController.m */; };
-		4D0B08FF1F2B322A00EF754C /* JDRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0B08FD1F2B322A00EF754C /* JDRouter.m */; };
 		4D30EA6B1F2F0ADF0050370A /* UserIntent.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D30EA661F2F0ADF0050370A /* UserIntent.m */; };
 		4D30EA6C1F2F0ADF0050370A /* JDNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D30EA6A1F2F0ADF0050370A /* JDNextViewController.m */; };
 		4D30EA701F2F0B000050370A /* JDRouterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D30EA6E1F2F0B000050370A /* JDRouterViewController.m */; };
@@ -28,16 +26,12 @@
 		4D8DB4CB1F29EAAD003249CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D8DB4CA1F29EAAD003249CD /* Assets.xcassets */; };
 		4D8DB4CE1F29EAAD003249CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D8DB4CC1F29EAAD003249CD /* LaunchScreen.storyboard */; };
 		6958C61920A2C739000D27FF /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = 6958C61720A2C739000D27FF /* fishhook.c */; };
-		69C7F2F822E14F4F002D2774 /* JDRouterCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C7F2F722E14F4F002D2774 /* JDRouterCenter.m */; };
+		69C7F2FB22E15A71002D2774 /* JDRouterCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C7F2F922E15A71002D2774 /* JDRouterCenter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4D0B08F01F2B202200EF754C /* JDIntent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDIntent.h; sourceTree = "<group>"; };
 		4D0B08F11F2B202200EF754C /* JDIntent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDIntent.m; sourceTree = "<group>"; };
-		4D0B08FA1F2B322A00EF754C /* JDRouter+viewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JDRouter+viewController.h"; sourceTree = "<group>"; };
-		4D0B08FB1F2B322A00EF754C /* JDRouter+viewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JDRouter+viewController.m"; sourceTree = "<group>"; };
-		4D0B08FC1F2B322A00EF754C /* JDRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDRouter.h; sourceTree = "<group>"; };
-		4D0B08FD1F2B322A00EF754C /* JDRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDRouter.m; sourceTree = "<group>"; };
 		4D30EA651F2F0ADF0050370A /* UserIntent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserIntent.h; sourceTree = "<group>"; };
 		4D30EA661F2F0ADF0050370A /* UserIntent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserIntent.m; sourceTree = "<group>"; };
 		4D30EA691F2F0ADF0050370A /* JDNextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDNextViewController.h; sourceTree = "<group>"; };
@@ -70,8 +64,8 @@
 		4D8DB4CF1F29EAAD003249CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6958C61720A2C739000D27FF /* fishhook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fishhook.c; sourceTree = "<group>"; };
 		6958C61820A2C739000D27FF /* fishhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
-		69C7F2F622E14F4F002D2774 /* JDRouterCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDRouterCenter.h; sourceTree = "<group>"; };
-		69C7F2F722E14F4F002D2774 /* JDRouterCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDRouterCenter.m; sourceTree = "<group>"; };
+		69C7F2F922E15A71002D2774 /* JDRouterCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDRouterCenter.m; sourceTree = "<group>"; };
+		69C7F2FA22E15A71002D2774 /* JDRouterCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDRouterCenter.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,10 +91,8 @@
 		4D0B08F91F2B322A00EF754C /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				4D0B08FA1F2B322A00EF754C /* JDRouter+viewController.h */,
-				4D0B08FB1F2B322A00EF754C /* JDRouter+viewController.m */,
-				4D0B08FC1F2B322A00EF754C /* JDRouter.h */,
-				4D0B08FD1F2B322A00EF754C /* JDRouter.m */,
+				69C7F2FA22E15A71002D2774 /* JDRouterCenter.h */,
+				69C7F2F922E15A71002D2774 /* JDRouterCenter.m */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -112,8 +104,6 @@
 				4D30EA901F2F15870050370A /* JDAnnotation.m */,
 				4D30EA8C1F2F0DB00050370A /* JDServiceCenter.h */,
 				4D30EA8D1F2F0DB00050370A /* JDServiceCenter.m */,
-				69C7F2F622E14F4F002D2774 /* JDRouterCenter.h */,
-				69C7F2F722E14F4F002D2774 /* JDRouterCenter.m */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -299,13 +289,11 @@
 				4D8DB4C61F29EAAD003249CD /* ViewController.m in Sources */,
 				4D30EA6B1F2F0ADF0050370A /* UserIntent.m in Sources */,
 				4D30EA891F2F0D890050370A /* JDProtocolViewController.m in Sources */,
+				69C7F2FB22E15A71002D2774 /* JDRouterCenter.m in Sources */,
 				4D30EA8E1F2F0DB00050370A /* JDServiceCenter.m in Sources */,
 				4D30EA701F2F0B000050370A /* JDRouterViewController.m in Sources */,
-				4D0B08FF1F2B322A00EF754C /* JDRouter.m in Sources */,
 				4D30EA8B1F2F0D890050370A /* JDUserService.m in Sources */,
-				4D0B08FE1F2B322A00EF754C /* JDRouter+viewController.m in Sources */,
 				4D30EA751F2F0B5F0050370A /* JDIntentViewController.m in Sources */,
-				69C7F2F822E14F4F002D2774 /* JDRouterCenter.m in Sources */,
 				4D30EA6C1F2F0ADF0050370A /* JDNextViewController.m in Sources */,
 				4D8DB4C31F29EAAD003249CD /* AppDelegate.m in Sources */,
 				4D30EA911F2F15870050370A /* JDAnnotation.m in Sources */,

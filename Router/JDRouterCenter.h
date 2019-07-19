@@ -6,6 +6,11 @@
 //  Copyright © 2019 王金东. All rights reserved.
 //
 
+/**
+ 1、注册类：使用@JDRouter("xx://xx/xx",className) 来注册并实现handleWithLink:parameters:routerFrom:方法
+ 2、使用类: [JDRouterCenter openURL:xxx];
+ **/
+
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN

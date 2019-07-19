@@ -7,7 +7,6 @@
 //
 
 #import "JDNextViewController.h"
-#import "JDRouter+viewController.h"
 
 @interface JDNextViewController ()
 
@@ -16,17 +15,6 @@
 @implementation JDNextViewController
 
 
-+ (void)load {
-
-    [JDRouter registerUrl:@"order://order" action:^(NSDictionary *parameters) {
-        NSLog(@"处理数据%@",parameters);
-        void(^block)(id) = parameters[JDRouterCompletion];
-        if(block)block(@"哈哈");
-    } toVc:^UIViewController *{
-        return [[JDNextViewController alloc] init];
-    }];
-
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor redColor];

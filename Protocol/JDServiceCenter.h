@@ -10,9 +10,7 @@
 
 @interface JDServiceCenter : NSObject
 
-
 + (void)registerService:(id)service protocol:(Protocol*)protocol;
-
 
 + (id)serviceForProtocol:(Protocol *)protocol;
 

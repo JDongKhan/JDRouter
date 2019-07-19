@@ -115,6 +115,9 @@
         viewController.hidesBottomBarWhenPushed = YES;
     }
     [navigationController pushViewController:viewController animated:YES];
+    
+    //TODO
+    //此处需要跳转完成在调用completion
 }
 
 @end
