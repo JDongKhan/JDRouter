@@ -1,0 +1,643 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		33E964BA85D406E6287FABEDAABCFD5D /* JDRouterCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B1C6F6013CF81169A4F2B756C5FF27 /* JDRouterCenter.m */; };
+		3C2D6AEEF0EE70C10B1C99396C6E1DD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		65AFFF69F7B0D0A820FAAD9ABE645BD9 /* JDRouter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A6E5D7C5A77D63BFBBB52736E3F66F61 /* JDRouter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7FDD9C7880AF915361E8AB7CCAB6A3CC /* JDIntent.h in Headers */ = {isa = PBXBuildFile; fileRef = 83E72DF895B27A3267C1FCD3A217516E /* JDIntent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95A01531538C43CD39D6B96BD909D396 /* Pods-JDRouter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8593AB939FA73A95DC6B27DB85793F5C /* Pods-JDRouter-dummy.m */; };
+		A1E9A9A73EA6FB605B7CBD732E23C356 /* JDServiceCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 449DAD7856D1E10F06C34E818910FA58 /* JDServiceCenter.m */; };
+		A2DE283FCDDDFD2417612168E5B04D66 /* JDRouter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AE17364EA6942792C82AEEEDDEE84D /* JDRouter-dummy.m */; };
+		AE7D286F2EEBC112F9041EF3B7072D9C /* JDAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 613C2CDFD13572BDCD6631852623BE58 /* JDAnnotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AEDC18BDE719495AB0A7FED16E951B09 /* JDAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3B8DDCC1AAEEB7D1CB580EA3EE838D /* JDAnnotation.m */; };
+		C5D36C0C572DF5EBBB16037D271C24A4 /* JDRouterCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D5611B331075CE66ADDF28C42D0372 /* JDRouterCenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CBAC3033E8C5848B53B26F4E6A4B6DB5 /* JDIntent.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A09219CEAFABE0D3900BE9C57B9913 /* JDIntent.m */; };
+		CC7CBA27C77E8D1F9304D32086BB65DE /* Pods-JDRouter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D77D6DAE686817390181270ABE5369A /* Pods-JDRouter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D2F101C0E962F533F4A1BE1707B8F6D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312B988EF117AE4DE76A268D970131FE /* UIKit.framework */; };
+		D617D3C546A76E3A643E0944A54DCFE8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		DDF434D565A3E81BE3F9B29033058A7D /* JDServiceCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C68FF67F0E92E198764456420DCD4B5 /* JDServiceCenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04CDC7CC883C7AEB735707D9CBB12984 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B5F08F32C46072C237BFD698A5244EB;
+			remoteInfo = JDRouter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		08B3EAA2F0FBA739A667315C0DCC6E55 /* JDRouter.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JDRouter.xcconfig; sourceTree = "<group>"; };
+		1B221D8898F669911FEA838E00B553E8 /* Pods-JDRouter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-JDRouter.modulemap"; sourceTree = "<group>"; };
+		20A09219CEAFABE0D3900BE9C57B9913 /* JDIntent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JDIntent.m; path = Sources/Intent/JDIntent.m; sourceTree = "<group>"; };
+		2604B35567E6A2F4D9ADDC0D4DD96C48 /* JDRouter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JDRouter-prefix.pch"; sourceTree = "<group>"; };
+		282C749AE3F115474A2FC4578AE83A71 /* Pods-JDRouter-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JDRouter-frameworks.sh"; sourceTree = "<group>"; };
+		2C68FF67F0E92E198764456420DCD4B5 /* JDServiceCenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JDServiceCenter.h; path = Sources/Annotation/JDServiceCenter.h; sourceTree = "<group>"; };
+		312B988EF117AE4DE76A268D970131FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		3DCC185C896ABF1F3F6678B78EDA524D /* Pods_JDRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JDRouter.framework; path = "Pods-JDRouter.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		402971BFD4AE1382DF47577FD2413F7B /* Pods-JDRouter-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JDRouter-acknowledgements.markdown"; sourceTree = "<group>"; };
+		436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		449DAD7856D1E10F06C34E818910FA58 /* JDServiceCenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JDServiceCenter.m; path = Sources/Annotation/JDServiceCenter.m; sourceTree = "<group>"; };
+		4FCE4534100709B836C3D1F54CB1E7F7 /* JDRouter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JDRouter.modulemap; sourceTree = "<group>"; };
+		613C2CDFD13572BDCD6631852623BE58 /* JDAnnotation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JDAnnotation.h; path = Sources/Annotation/JDAnnotation.h; sourceTree = "<group>"; };
+		66C58C70785B71BDBCF11856077D2CE4 /* JDRouter-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "JDRouter-Info.plist"; sourceTree = "<group>"; };
+		6AA16AEB39C4DE4E4F714E6014D655F7 /* JDRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JDRouter.framework; path = JDRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D77D6DAE686817390181270ABE5369A /* Pods-JDRouter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JDRouter-umbrella.h"; sourceTree = "<group>"; };
+		80AE17364EA6942792C82AEEEDDEE84D /* JDRouter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JDRouter-dummy.m"; sourceTree = "<group>"; };
+		83E72DF895B27A3267C1FCD3A217516E /* JDIntent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JDIntent.h; path = Sources/Intent/JDIntent.h; sourceTree = "<group>"; };
+		8593AB939FA73A95DC6B27DB85793F5C /* Pods-JDRouter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JDRouter-dummy.m"; sourceTree = "<group>"; };
+		93D5611B331075CE66ADDF28C42D0372 /* JDRouterCenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JDRouterCenter.h; path = Sources/Annotation/JDRouterCenter.h; sourceTree = "<group>"; };
+		9895CE0B86E05664CCACD9FC926D49BD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A6E5D7C5A77D63BFBBB52736E3F66F61 /* JDRouter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JDRouter-umbrella.h"; sourceTree = "<group>"; };
+		C79514A0F79EB18EB747259343EA5A30 /* Pods-JDRouter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JDRouter.release.xcconfig"; sourceTree = "<group>"; };
+		DF0B1BD78A61A4B55755668664EF3B6B /* Pods-JDRouter-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JDRouter-acknowledgements.plist"; sourceTree = "<group>"; };
+		E1B91455EF0B26783DE57E7398D3009C /* Pods-JDRouter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JDRouter.debug.xcconfig"; sourceTree = "<group>"; };
+		EC1E2B0EC46CECA2BD8128C87B27B272 /* JDRouter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = JDRouter.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F8B1C6F6013CF81169A4F2B756C5FF27 /* JDRouterCenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JDRouterCenter.m; path = Sources/Annotation/JDRouterCenter.m; sourceTree = "<group>"; };
+		FE76CC309645EC129AA893F6EA34C22F /* Pods-JDRouter-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JDRouter-Info.plist"; sourceTree = "<group>"; };
+		FF3B8DDCC1AAEEB7D1CB580EA3EE838D /* JDAnnotation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JDAnnotation.m; path = Sources/Annotation/JDAnnotation.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5D9D1795FCDD8578E5E96FC34EBD7ACD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D617D3C546A76E3A643E0944A54DCFE8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82511B89516F4A188AA2FF11FEE434E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C2D6AEEF0EE70C10B1C99396C6E1DD0 /* Foundation.framework in Frameworks */,
+				D2F101C0E962F533F4A1BE1707B8F6D5 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0BA702901BF91A41A9792E6F8AED1E3C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6AA16AEB39C4DE4E4F714E6014D655F7 /* JDRouter.framework */,
+				3DCC185C896ABF1F3F6678B78EDA524D /* Pods_JDRouter.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2983683FD097A93297E2F5D4E382B36 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3EB3160E3324CA0635C3FC061BADC871 /* Pods-JDRouter */ = {
+			isa = PBXGroup;
+			children = (
+				1B221D8898F669911FEA838E00B553E8 /* Pods-JDRouter.modulemap */,
+				402971BFD4AE1382DF47577FD2413F7B /* Pods-JDRouter-acknowledgements.markdown */,
+				DF0B1BD78A61A4B55755668664EF3B6B /* Pods-JDRouter-acknowledgements.plist */,
+				8593AB939FA73A95DC6B27DB85793F5C /* Pods-JDRouter-dummy.m */,
+				282C749AE3F115474A2FC4578AE83A71 /* Pods-JDRouter-frameworks.sh */,
+				FE76CC309645EC129AA893F6EA34C22F /* Pods-JDRouter-Info.plist */,
+				6D77D6DAE686817390181270ABE5369A /* Pods-JDRouter-umbrella.h */,
+				E1B91455EF0B26783DE57E7398D3009C /* Pods-JDRouter.debug.xcconfig */,
+				C79514A0F79EB18EB747259343EA5A30 /* Pods-JDRouter.release.xcconfig */,
+			);
+			name = "Pods-JDRouter";
+			path = "Target Support Files/Pods-JDRouter";
+			sourceTree = "<group>";
+		};
+		5B563E6A7BBFB4C3EAA841B6EA0968AB /* JDRouter */ = {
+			isa = PBXGroup;
+			children = (
+				D3DC82AAE1DA17E3612FE57BEB706C9C /* Annotation */,
+				9F23276BC60A09C8016D6BF6A4BE0460 /* Intent */,
+				B970BBB544D88706B1E6CC99DFC25569 /* Pod */,
+				D2DEDFBD8632DBD646B4BB8B91CBB3A9 /* Support Files */,
+			);
+			name = JDRouter;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		711DEEAA97239FFA1FCB8690492664DC /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5B563E6A7BBFB4C3EAA841B6EA0968AB /* JDRouter */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		9F23276BC60A09C8016D6BF6A4BE0460 /* Intent */ = {
+			isa = PBXGroup;
+			children = (
+				83E72DF895B27A3267C1FCD3A217516E /* JDIntent.h */,
+				20A09219CEAFABE0D3900BE9C57B9913 /* JDIntent.m */,
+			);
+			name = Intent;
+			sourceTree = "<group>";
+		};
+		B970BBB544D88706B1E6CC99DFC25569 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				EC1E2B0EC46CECA2BD8128C87B27B272 /* JDRouter.podspec */,
+				9895CE0B86E05664CCACD9FC926D49BD /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				711DEEAA97239FFA1FCB8690492664DC /* Development Pods */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				0BA702901BF91A41A9792E6F8AED1E3C /* Products */,
+				D6A8E2BEE506A66971D68C25D527333B /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D2DEDFBD8632DBD646B4BB8B91CBB3A9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4FCE4534100709B836C3D1F54CB1E7F7 /* JDRouter.modulemap */,
+				08B3EAA2F0FBA739A667315C0DCC6E55 /* JDRouter.xcconfig */,
+				80AE17364EA6942792C82AEEEDDEE84D /* JDRouter-dummy.m */,
+				66C58C70785B71BDBCF11856077D2CE4 /* JDRouter-Info.plist */,
+				2604B35567E6A2F4D9ADDC0D4DD96C48 /* JDRouter-prefix.pch */,
+				A6E5D7C5A77D63BFBBB52736E3F66F61 /* JDRouter-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Pods/Target Support Files/JDRouter";
+			sourceTree = "<group>";
+		};
+		D3DC82AAE1DA17E3612FE57BEB706C9C /* Annotation */ = {
+			isa = PBXGroup;
+			children = (
+				613C2CDFD13572BDCD6631852623BE58 /* JDAnnotation.h */,
+				FF3B8DDCC1AAEEB7D1CB580EA3EE838D /* JDAnnotation.m */,
+				93D5611B331075CE66ADDF28C42D0372 /* JDRouterCenter.h */,
+				F8B1C6F6013CF81169A4F2B756C5FF27 /* JDRouterCenter.m */,
+				2C68FF67F0E92E198764456420DCD4B5 /* JDServiceCenter.h */,
+				449DAD7856D1E10F06C34E818910FA58 /* JDServiceCenter.m */,
+			);
+			name = Annotation;
+			sourceTree = "<group>";
+		};
+		D6A8E2BEE506A66971D68C25D527333B /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3EB3160E3324CA0635C3FC061BADC871 /* Pods-JDRouter */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		E2983683FD097A93297E2F5D4E382B36 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */,
+				312B988EF117AE4DE76A268D970131FE /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		33B160FCD74E6765D2BE7302CB12814C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE7D286F2EEBC112F9041EF3B7072D9C /* JDAnnotation.h in Headers */,
+				7FDD9C7880AF915361E8AB7CCAB6A3CC /* JDIntent.h in Headers */,
+				65AFFF69F7B0D0A820FAAD9ABE645BD9 /* JDRouter-umbrella.h in Headers */,
+				C5D36C0C572DF5EBBB16037D271C24A4 /* JDRouterCenter.h in Headers */,
+				DDF434D565A3E81BE3F9B29033058A7D /* JDServiceCenter.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A966739B8C3673BDE91E552298F5C53 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC7CBA27C77E8D1F9304D32086BB65DE /* Pods-JDRouter-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		20CF5A169F990CF565CC977CC2A75AAC /* Pods-JDRouter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4AB6E496FE89007176783C5EC3A43EE7 /* Build configuration list for PBXNativeTarget "Pods-JDRouter" */;
+			buildPhases = (
+				3A966739B8C3673BDE91E552298F5C53 /* Headers */,
+				5971ED29AECD45E56A36AC5058A965AE /* Sources */,
+				5D9D1795FCDD8578E5E96FC34EBD7ACD /* Frameworks */,
+				2FCA4DA52B2C5902F88C9A454A8DE919 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1E101193CB20CD25933F97CD2E13C579 /* PBXTargetDependency */,
+			);
+			name = "Pods-JDRouter";
+			productName = "Pods-JDRouter";
+			productReference = 3DCC185C896ABF1F3F6678B78EDA524D /* Pods_JDRouter.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8B5F08F32C46072C237BFD698A5244EB /* JDRouter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 323F02E4096B2AF5D35BAA3CDE8C5BA2 /* Build configuration list for PBXNativeTarget "JDRouter" */;
+			buildPhases = (
+				33B160FCD74E6765D2BE7302CB12814C /* Headers */,
+				5C8BB5AC5658F997DE8B367DC4F56C11 /* Sources */,
+				82511B89516F4A188AA2FF11FEE434E1 /* Frameworks */,
+				0CE23FDD31F5F4D5DE1A6A3AEE016324 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JDRouter;
+			productName = JDRouter;
+			productReference = 6AA16AEB39C4DE4E4F714E6014D655F7 /* JDRouter.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 0BA702901BF91A41A9792E6F8AED1E3C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8B5F08F32C46072C237BFD698A5244EB /* JDRouter */,
+				20CF5A169F990CF565CC977CC2A75AAC /* Pods-JDRouter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0CE23FDD31F5F4D5DE1A6A3AEE016324 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FCA4DA52B2C5902F88C9A454A8DE919 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5971ED29AECD45E56A36AC5058A965AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95A01531538C43CD39D6B96BD909D396 /* Pods-JDRouter-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C8BB5AC5658F997DE8B367DC4F56C11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEDC18BDE719495AB0A7FED16E951B09 /* JDAnnotation.m in Sources */,
+				CBAC3033E8C5848B53B26F4E6A4B6DB5 /* JDIntent.m in Sources */,
+				A2DE283FCDDDFD2417612168E5B04D66 /* JDRouter-dummy.m in Sources */,
+				33E964BA85D406E6287FABEDAABCFD5D /* JDRouterCenter.m in Sources */,
+				A1E9A9A73EA6FB605B7CBD732E23C356 /* JDServiceCenter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1E101193CB20CD25933F97CD2E13C579 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JDRouter;
+			target = 8B5F08F32C46072C237BFD698A5244EB /* JDRouter */;
+			targetProxy = 04CDC7CC883C7AEB735707D9CBB12984 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3F8013D5C7EC957F7BC9C4559BC2ECB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08B3EAA2F0FBA739A667315C0DCC6E55 /* JDRouter.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/JDRouter/JDRouter-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JDRouter/JDRouter-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JDRouter/JDRouter.modulemap";
+				PRODUCT_MODULE_NAME = JDRouter;
+				PRODUCT_NAME = JDRouter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4BE66A09A74FD25164AAB3C2645B9B93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		61E7CF843560B51E5DFBBE7AAAF1C4C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1B91455EF0B26783DE57E7398D3009C /* Pods-JDRouter.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JDRouter/Pods-JDRouter-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JDRouter/Pods-JDRouter.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7EF7227D9B20A1D549000096ACCB23D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		808FC6DED41932FDDB798EC86FA3ECC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08B3EAA2F0FBA739A667315C0DCC6E55 /* JDRouter.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/JDRouter/JDRouter-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JDRouter/JDRouter-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JDRouter/JDRouter.modulemap";
+				PRODUCT_MODULE_NAME = JDRouter;
+				PRODUCT_NAME = JDRouter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B0713809A57909E99EADB95AAF085D89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C79514A0F79EB18EB747259343EA5A30 /* Pods-JDRouter.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JDRouter/Pods-JDRouter-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JDRouter/Pods-JDRouter.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		323F02E4096B2AF5D35BAA3CDE8C5BA2 /* Build configuration list for PBXNativeTarget "JDRouter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F8013D5C7EC957F7BC9C4559BC2ECB1 /* Debug */,
+				808FC6DED41932FDDB798EC86FA3ECC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EF7227D9B20A1D549000096ACCB23D7 /* Debug */,
+				4BE66A09A74FD25164AAB3C2645B9B93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4AB6E496FE89007176783C5EC3A43EE7 /* Build configuration list for PBXNativeTarget "Pods-JDRouter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61E7CF843560B51E5DFBBE7AAAF1C4C6 /* Debug */,
+				B0713809A57909E99EADB95AAF085D89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

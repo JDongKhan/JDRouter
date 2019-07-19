@@ -20,18 +20,13 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/JDongKhan/JDRouter.git", :tag => s.version.to_s }
 
   s.subspec 'Intent' do |ss|
-    ss.source_files = 'Intent/**/*.{h,m}'
-    ss.public_header_files = 'Intent/**/*.h'
+    ss.source_files = 'Sources/Intent/**/*.{h,m}'
+    ss.public_header_files = 'Sources/Intent/**/*.h'
   end
 
-  s.subspec 'Router' do |cc|
-    cc.source_files = 'Router/**/*.{h,m}'
-    cc.public_header_files = 'Router/**/*.h'
-  end
-
- s.subspec 'Protocol' do |cc|
-    cc.source_files = 'Protocol/**/*.{h,m}'
-    cc.public_header_files = 'Protocol/**/*.h'
+  s.subspec 'Annotation' do |cc|
+    cc.source_files = 'Sources/Annotation/**/*.{h,m}'
+    cc.public_header_files = 'Sources/Annotation/**/*.h'
   end
 
   s.frameworks = 'Foundation', 'UIKit'

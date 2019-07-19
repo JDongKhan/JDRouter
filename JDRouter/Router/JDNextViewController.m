@@ -7,13 +7,21 @@
 //
 
 #import "JDNextViewController.h"
+#import "JDAnnotation.h"
 
+@JDRouter("bb://user/name",JDNextViewController)
 @interface JDNextViewController ()
 
 @end
 
 @implementation JDNextViewController
 
+//实现处理路由的事情
++ (id)handleWithLink:(NSString *)url parameters:(NSDictionary *)parameters routerFrom:(id)from {
+    JDNextViewController *vc = [[JDNextViewController alloc] init];
+    vc.name = url;
+    return vc;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
