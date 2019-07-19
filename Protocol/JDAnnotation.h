@@ -16,11 +16,18 @@
 #define JDServiceSectionName "JDServices"
 #endif
 
+#ifndef JDRouterSectionName
+#define JDRouterSectionName "JDRouter"
+#endif
 
-#define JD_DATA(sectname) __attribute((used, section("__DATA,"#sectname" ")))
 
-#define JD_Service(servicename,impl) \
-class JDServiceCenter;char * k##servicename##_service JD_DATA(JDServices) = "{ \""#servicename"\" : \""#impl"\"}";
+#define JDDATA(sectname) __attribute((used, section("__DATA,"#sectname" ")))
+
+#define JDService(servicename,impl) \
+class JDServiceCenter;char * k##servicename##_service JDDATA(JDServices) = "{ \""#servicename"\" : \""#impl"\"}";
+
+#define JDRouter(uri,className) \
+class JDServiceCenter; char * k##className##_service JDDATA(JDRouter) = "{ "#uri" : \""#className"\"}";
 
 @interface JDAnnotation : NSObject
 

@@ -8,6 +8,7 @@
 
 #import "JDRouterViewController.h"
 #import "JDRouter+viewController.h"
+#import "JDRouterCenter.h"
 
 @interface JDRouterViewController ()
 
@@ -62,6 +63,11 @@
 }
 
 
+- (IBAction)gotospringRouter:(id)sender {
+    [JDRouterCenter openURL:@"bb://user/name" parameters:@{@"key":@"value"} routerFrom:self completion:^(id  _Nonnull result) {
+        NSLog(@"completion");
+    }];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

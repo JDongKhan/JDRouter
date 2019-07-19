@@ -8,12 +8,20 @@
 
 #import "JDUserService.h"
 #import "JDAnnotation.h"
+#import "JDNextViewController.h"
 
 
-@JD_Service(JDUserProtocol,JDUserService)
+@JDService(JDUserProtocol,JDUserService)
+@JDRouter("bb://user/name",JDUserService)
 
 @implementation JDUserService
 
+
++ (id)handleWithLink:(NSString *)url parameters:(NSDictionary *)parameters routerFrom:(id)from {
+    JDNextViewController *vc = [[JDNextViewController alloc] init];
+    vc.name = url;
+    return vc;
+}
 
 - (NSString *)userName { 
     return @"wjd";

@@ -1,6 +1,7 @@
 
 #import "JDAnnotation.h"
 #import "JDServiceCenter.h"
+#import "JDRouterCenter.h"
 #include <mach-o/getsect.h>
 #include <mach-o/dyld.h>
 
@@ -23,6 +24,23 @@ static void dyld_callback(const struct mach_header *mhp, intptr_t vmaddr_slide) 
                     [JDServiceCenter registerService:NSClassFromString(clsName) protocol:NSProtocolFromString(protocol)];
                 }
                 
+            }
+        }
+    }
+    
+    //router
+    NSArray<NSString *> *routers = JDReadConfiguration(JDRouterSectionName,mhp);
+    for (NSString *map in routers) {
+        NSData *jsonData =  [map dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *error = nil;
+        id json = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+        if (!error) {
+            if ([json isKindOfClass:[NSDictionary class]] && [json allKeys].count) {
+                NSString *url = [json allKeys][0];
+                NSString *clsName  = [json allValues][0];
+                if (url && clsName) {
+                    [JDRouterCenter registerURL:url className:clsName];
+                }
             }
         }
     }
