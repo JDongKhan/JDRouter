@@ -6,7 +6,7 @@
 
 本方案特色是模拟java的注解方案。
 
-我们可以通过@JDService注册服务m，用@JDRouter用注册路由。
+我们可以通过@JDService注册服务，用@JDRouter用注册路由。
 
 比如：
 
