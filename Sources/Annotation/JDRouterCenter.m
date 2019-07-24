@@ -27,12 +27,17 @@
 - (id)openUrl:(NSString *)Url
      parameters:(NSDictionary<NSString *, id> * _Nullable)parameters
      routerFrom:(id _Nullable)from
-     completion:(void(^_Nullable)(id result))completion {
+     completion:(void(^_Nullable)(void))completion {
     NSString *className = [_routersMap valueForKey:Url];
     Class clazz = NSClassFromString(className);
     UIViewController *viewController = nil;
     if (clazz) {
+        
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
         SEL sel = @selector(handleWithLink:parameters:routerFrom:);
+#pragma clang diagnostic pop
+        
         if ([clazz respondsToSelector:sel]) {
             IMP imp = [clazz methodForSelector:sel];
             //定义函数指针，消除告警
@@ -71,13 +76,13 @@
 + (id)openURL:(NSString *)URL
      parameters:(NSDictionary<NSString *, id> * _Nullable)parameters
      routerFrom:(id _Nullable)from
-     completion:(void(^_Nullable)(id result))completion {
+     completion:(void(^_Nullable)(void))completion {
     return [[JDRouterCenter sharedInstance] openUrl:URL parameters:parameters routerFrom:from completion:completion];
 }
 
 
 
-- (void)showViewController:(UIViewController *)viewController completion:(void (^)())completion {
+- (void)showViewController:(UIViewController *)viewController completion:(void (^)(void))completion {
     
 //    __strong void (^completionBlock)(void) = [completion copy];
     

@@ -22,6 +22,8 @@
 		4D8DB4C91F29EAAD003249CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D8DB4C71F29EAAD003249CD /* Main.storyboard */; };
 		4D8DB4CB1F29EAAD003249CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D8DB4CA1F29EAAD003249CD /* Assets.xcassets */; };
 		4D8DB4CE1F29EAAD003249CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D8DB4CC1F29EAAD003249CD /* LaunchScreen.storyboard */; };
+		695162D122E54A0A00497603 /* AppModule1.m in Sources */ = {isa = PBXBuildFile; fileRef = 695162D022E54A0A00497603 /* AppModule1.m */; };
+		695162D422E54A1700497603 /* AppModule2.m in Sources */ = {isa = PBXBuildFile; fileRef = 695162D322E54A1700497603 /* AppModule2.m */; };
 		6958C61920A2C739000D27FF /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = 6958C61720A2C739000D27FF /* fishhook.c */; };
 		C21445A34CF35AF5CB153915 /* Pods_JDRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE75FA2995E1E4FBD43120D6 /* Pods_JDRouter.framework */; };
 /* End PBXBuildFile section */
@@ -54,6 +56,10 @@
 		4D8DB4CA1F29EAAD003249CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D8DB4CD1F29EAAD003249CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D8DB4CF1F29EAAD003249CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		695162CF22E54A0A00497603 /* AppModule1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppModule1.h; sourceTree = "<group>"; };
+		695162D022E54A0A00497603 /* AppModule1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppModule1.m; sourceTree = "<group>"; };
+		695162D222E54A1700497603 /* AppModule2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppModule2.h; sourceTree = "<group>"; };
+		695162D322E54A1700497603 /* AppModule2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppModule2.m; sourceTree = "<group>"; };
 		6958C61720A2C739000D27FF /* fishhook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fishhook.c; sourceTree = "<group>"; };
 		6958C61820A2C739000D27FF /* fishhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
 		AE75FA2995E1E4FBD43120D6 /* Pods_JDRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JDRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +152,7 @@
 		4D8DB4BD1F29EAAD003249CD /* JDRouter */ = {
 			isa = PBXGroup;
 			children = (
+				695162CE22E549EA00497603 /* Module */,
 				4D30EA801F2F0D890050370A /* Protocol */,
 				4D30EA641F2F0ADF0050370A /* Intent */,
 				4D30EA681F2F0ADF0050370A /* Router */,
@@ -172,6 +179,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		695162CE22E549EA00497603 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				695162CF22E54A0A00497603 /* AppModule1.h */,
+				695162D022E54A0A00497603 /* AppModule1.m */,
+				695162D222E54A1700497603 /* AppModule2.h */,
+				695162D322E54A1700497603 /* AppModule2.m */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
 		731434AC9533275B6C8697E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,7 +204,6 @@
 				FDC80DDBEDBD1678BE9B74E0 /* Pods-JDRouter.debug.xcconfig */,
 				0FA694AB5D5534FCB1A481EF /* Pods-JDRouter.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -310,11 +327,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				695162D422E54A1700497603 /* AppModule2.m in Sources */,
 				6958C61920A2C739000D27FF /* fishhook.c in Sources */,
 				4D8DB4C61F29EAAD003249CD /* ViewController.m in Sources */,
 				4D30EA6B1F2F0ADF0050370A /* UserIntent.m in Sources */,
 				4D30EA891F2F0D890050370A /* JDProtocolViewController.m in Sources */,
 				4D30EA701F2F0B000050370A /* JDRouterViewController.m in Sources */,
+				695162D122E54A0A00497603 /* AppModule1.m in Sources */,
 				4D30EA8B1F2F0D890050370A /* JDUserService.m in Sources */,
 				4D30EA751F2F0B5F0050370A /* JDIntentViewController.m in Sources */,
 				4D30EA6C1F2F0ADF0050370A /* JDNextViewController.m in Sources */,

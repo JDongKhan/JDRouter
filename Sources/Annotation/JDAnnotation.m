@@ -2,13 +2,31 @@
 #import "JDAnnotation.h"
 #import "JDServiceCenter.h"
 #import "JDRouterCenter.h"
+#import "JDModuleCenter.h"
 #include <mach-o/getsect.h>
 #include <mach-o/dyld.h>
 
 
 NSArray<NSString *>* JDReadConfiguration(char *sectionName,const struct mach_header *mhp);
 static void dyld_callback(const struct mach_header *mhp, intptr_t vmaddr_slide) {
-    //register services
+    
+    //module
+    NSArray<NSString *> *modules = JDReadConfiguration(JDModuleSectionName,mhp);
+    for (NSString *className in modules) {
+        Class clazz;
+        if (className) {
+            clazz = NSClassFromString(className);
+            if (clazz) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincompatible-pointer-types"
+                [JDModuleCenter registerModuleClass:clazz];
+#pragma clang diagnostic pop
+            }
+        }
+        
+    }
+    
+    //services
     NSArray<NSString *> *services = JDReadConfiguration(JDServiceSectionName,mhp);
     for (NSString *map in services) {
         NSData *jsonData =  [map dataUsingEncoding:NSUTF8StringEncoding];
@@ -44,7 +62,7 @@ static void dyld_callback(const struct mach_header *mhp, intptr_t vmaddr_slide) 
             }
         }
     }
-    
+
 }
 __attribute__((constructor))
 void initProphet() {
@@ -77,3 +95,6 @@ NSArray<NSString *>* JDReadConfiguration(char *sectionName,const struct mach_hea
 @end
 
 
+@implementation NSObject (JDRouter)
+
+@end

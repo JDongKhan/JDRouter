@@ -11,6 +11,9 @@
 #endif
 
 #import "JDAnnotation.h"
+#import "JDApplicationDelegate.h"
+#import "JDModuleCenter.h"
+#import "JDModuleManager.h"
 #import "JDRouterCenter.h"
 #import "JDServiceCenter.h"
 #import "JDIntent.h"

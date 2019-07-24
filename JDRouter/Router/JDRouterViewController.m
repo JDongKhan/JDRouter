@@ -38,7 +38,7 @@
 
 
 - (IBAction)gotospringRouter:(id)sender {
-    [JDRouterCenter openURL:@"bb://user/name" parameters:@{@"key":@"value"} routerFrom:self completion:^(id  _Nonnull result) {
+    [JDRouterCenter openURL:@"bb://user/name" parameters:@{@"key":@"value"} routerFrom:self completion:^(void) {
         NSLog(@"completion");
     }];
 }

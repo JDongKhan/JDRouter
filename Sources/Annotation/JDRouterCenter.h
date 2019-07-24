@@ -45,7 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (id)openURL:(NSString *)URL
    parameters:(NSDictionary<NSString *, id> * _Nullable)parameters
    routerFrom:(id _Nullable)from
-   completion:(void(^_Nullable)(id result))completion;
+   completion:(void(^_Nullable)(void))completion;
 
 @end
 
