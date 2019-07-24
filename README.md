@@ -2,7 +2,7 @@
 注：本项目只是一个介绍有关组件解耦以及router思路的项目，很多细节没有完善。
 
 
-# 一、Protocol实现，模仿spring的机制。
+# 一、Annotation实现，模仿spring的机制。
 
 本方案特色是模拟java的注解方案。
 
