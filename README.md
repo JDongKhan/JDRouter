@@ -19,9 +19,11 @@
       
   3、通过JDServiceCenter中取得实例进行调用。
   
-      id<JDUserProtocol> user = [JDServiceCenter serviceForProtocol:@protocol(JDUserProtocol)];
-    NSString *userName = user.userName;
-    
+  ```objc
+     id<JDUserProtocol> user = [JDServiceCenter serviceForProtocol:@protocol(JDUserProtocol)];
+      
+     NSString *userName = user.userName;
+```
     
 二、router：
 
