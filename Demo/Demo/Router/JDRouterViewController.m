@@ -1,19 +1,19 @@
 //
-//  JDIntentViewController.m
+//  JDRouterViewController.m
 //  JDRouter
 //
 //  Created by 王金东 on 2017/7/31.
 //  Copyright © 2017年 王金东. All rights reserved.
 //
 
-#import "JDIntentViewController.h"
-#import "JDIntent.h"
+#import "JDRouterViewController.h"
+#import "JDRouterCenter.h"
 
-@interface JDIntentViewController ()
+@interface JDRouterViewController ()
 
 @end
 
-@implementation JDIntentViewController
+@implementation JDRouterViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -21,19 +21,27 @@
 }
 
 
-- (IBAction)intentAction:(id)sender {
-    [JDIntent openUrl:@"Bababus://user/gotoNext" from:self completion:^(id info) {
-        NSLog(@"%@",info);
-    }];
+- (IBAction)btnAction:(id)sender {
+    
+}
+- (IBAction)btn2Action:(id)sender {
+    
+}
+- (IBAction)btn3Action:(id)sender {
+    
+}
+- (IBAction)loginAction:(id)sender {
+    
+}
+- (IBAction)gotoNextAction:(id)sender {
 }
 
-- (IBAction)intent1Action:(id)sender {
-    [JDIntent openUrl:@"Bababus://dept/gotoNext" from:self completion:^(id info) {
-        NSLog(@"%@",info);
+
+- (IBAction)gotospringRouter:(id)sender {
+    [JDRouterCenter openURL:@"bb://user/name" parameters:@{@"key":@"value"} routerFrom:self completion:^(void) {
+        NSLog(@"completion");
     }];
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

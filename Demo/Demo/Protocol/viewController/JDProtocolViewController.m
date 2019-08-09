@@ -1,39 +1,29 @@
 //
-//  JDIntentViewController.m
+//  JDProtocolViewController.m
 //  JDRouter
 //
 //  Created by 王金东 on 2017/7/31.
 //  Copyright © 2017年 王金东. All rights reserved.
 //
 
-#import "JDIntentViewController.h"
-#import "JDIntent.h"
+#import "JDProtocolViewController.h"
+#import "JDUserProtocol.h"
+#import "JDServiceCenter.h"
 
-@interface JDIntentViewController ()
+@interface JDProtocolViewController ()
 
 @end
 
-@implementation JDIntentViewController
+@implementation JDProtocolViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    id<JDUserProtocol> user = [JDServiceCenter serviceForProtocol:@protocol(JDUserProtocol)];
+    NSString *userName = user.userName;
+    NSLog(@"%@",userName);
     // Do any additional setup after loading the view from its nib.
 }
-
-
-- (IBAction)intentAction:(id)sender {
-    [JDIntent openUrl:@"Bababus://user/gotoNext" from:self completion:^(id info) {
-        NSLog(@"%@",info);
-    }];
-}
-
-- (IBAction)intent1Action:(id)sender {
-    [JDIntent openUrl:@"Bababus://dept/gotoNext" from:self completion:^(id info) {
-        NSLog(@"%@",info);
-    }];
-}
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

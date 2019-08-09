@@ -1,14 +1,15 @@
 //
-//  UserIntent.h
+//  JDUserProtocol.h
 //  JDRouter
 //
-//  Created by 王金东 on 2017/7/28.
+//  Created by 王金东 on 2017/7/31.
 //  Copyright © 2017年 王金东. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "JDIntent.h"
 
-@interface UserIntent : NSObject
+@protocol JDUserProtocol <NSObject>
+
+- (NSString *)userName;
 
 @end

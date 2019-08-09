@@ -1,0 +1,20 @@
+PODS:
+  - JDRouter (1.2.9):
+    - JDRouter/Annotation (= 1.2.9)
+    - JDRouter/Intent (= 1.2.9)
+  - JDRouter/Annotation (1.2.9)
+  - JDRouter/Intent (1.2.9)
+
+DEPENDENCIES:
+  - JDRouter (from `../`)
+
+EXTERNAL SOURCES:
+  JDRouter:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  JDRouter: 238a47ec10a823fd022a07d50a6f7d1b86ef8ca9
+
+PODFILE CHECKSUM: 844f38ca98a343bbe8bc3af8d99b1afee7e82568
+
+COCOAPODS: 1.7.4

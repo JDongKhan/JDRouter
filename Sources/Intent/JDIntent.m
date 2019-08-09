@@ -29,7 +29,7 @@ static NSArray<NSString *> *_kIntentSchemes = nil;
 }
 /*
  scheme://[target]/[action]?[params]
- Bababus://user/gotoNext
+ baba://user/gotoNext
  */
 
 + (void)supportScheme:(NSArray<NSString *> *)schemes {
@@ -46,29 +46,29 @@ static NSArray<NSString *> *_kIntentSchemes = nil;
 
 + (id)openUrl:(NSString *)url
          from:(id)from
-   completion:(JDIntentCompletion)completion {
+   completion:(JDIntentComplete)completion {
     return [self openUrl:url userInfo:nil from:from completion:completion];
 }
 
-+ (id)openUrl:(NSString *)url  userInfo:(NSDictionary *)userInfo {
++ (id)openUrl:(NSString *)url userInfo:(NSDictionary *)userInfo {
     return [self openUrl:url userInfo:userInfo  completion:nil];
 }
 
 + (id)openUrl:(NSString *)url
      userInfo:(NSDictionary *)userInfo
-   completion:(JDIntentCompletion)completion {
+   completion:(JDIntentComplete)completion {
    return [self openUrl:url userInfo:userInfo from:nil completion:completion];
 }
 
 + (id)openUrl:(NSString *)url
-   completion:(JDIntentCompletion)completion {
+   completion:(JDIntentComplete)completion {
     return [self openUrl:url from:nil completion:completion];
 }
 
 + (id)openUrl:(NSString *)urlString
      userInfo:(NSDictionary *)userInfo
          from:(id)from
-   completion:(JDIntentCompletion)completion {
+   completion:(JDIntentComplete)completion {
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:userInfo];
     NSURL *url = [NSURL URLWithString:urlString];
     
@@ -97,42 +97,41 @@ static NSArray<NSString *> *_kIntentSchemes = nil;
              action:(NSString *)actionName
              params:(NSDictionary *)params
                from:(id)from
-         completion:(JDIntentCompletion)completion {
+         completion:(JDIntentComplete)completion {
     
     NSString *tn = [NSString stringWithFormat:@"%@%@",[targetName substringToIndex:1].uppercaseString,[targetName substringFromIndex:1]];
     NSString *targetClassString = [NSString stringWithFormat:@"%@Intent", tn];
     
     NSObject *target = CFDictionaryGetValue(self.cachedTarget, (__bridge const void *)(targetClassString));
     if (target == nil) {
-        Class targetClass = NSClassFromString(targetClassString);
-        target = [[targetClass alloc] init];
+        target = [[NSClassFromString(targetClassString) alloc] init];
         if (target == nil) {
-            NSLog(@"没有配置Intent");
-            return nil;
+            NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+            NSString *projectName = [infoDictionary objectForKey:@"CFBundleExecutable"];
+            NSString *className = [NSString stringWithFormat:@"%@.%@",projectName,targetClassString];
+            target = [[NSClassFromString(className) alloc] init ];
+            if (target == nil) {
+                NSLog(@"没有配置Intent");
+                return nil;
+            }
         }
         CFDictionarySetValue(self.cachedTarget, (__bridge const void *)(targetClassString), (__bridge const void *)(target));
     }
     
-    NSString *completionActionName = [NSString stringWithFormat:@"%@:completion",actionName];
-    id result = [self target:target
-                      action:completionActionName
-                      params:params
-                        from:from
-                  completion:completion ];
+    JDIntentData *intentData = [[JDIntentData alloc] init];
+    intentData.from = from;
+    intentData.params = params;
+    intentData.complete = completion;
+    
+    actionName = [actionName stringByAppendingString:@":"];
+    
+    id result = [self target:target action:actionName  intentData:intentData];
     if (result) {
         return result;
     }
-    result = [self target:target
-                   action:actionName
-                   params:params
-                     from:from
-               completion:completion ];
-    if (result) {
-        return result;
-    }
-    SEL action = NSSelectorFromString(@"from:notFound:");
+    SEL action = NSSelectorFromString(@"notFound:");
     if ([target respondsToSelector:action]) {
-        return [self safePerformAction:action target:target params:params from:from completion:nil];
+        return [self safePerformAction:action target:target intentData:intentData];
     }
     NSLog(@"我尽力了，找不到你的Intent配置");
     CFDictionaryRemoveValue(self.cachedTarget, (__bridge const void *)(targetClassString));
@@ -141,34 +140,14 @@ static NSArray<NSString *> *_kIntentSchemes = nil;
 
 - (id)target:(id)target
       action:(NSString *)actionName
-      params:(NSDictionary *)params
-        from:(id)from
-  completion:(JDIntentCompletion)completion {
+      intentData:(JDIntentData *)intentData {
  
-    NSString *actionString = [NSString stringWithFormat:@"from:%@:", actionName];
-    SEL action = NSSelectorFromString(actionString);
+    SEL action = NSSelectorFromString(actionName);
     
     if ([target respondsToSelector:action]) {
-        return [self safePerformAction:action
-                                target:target
-                                params:params
-                                  from:from
-                            completion:completion ];
-    } else {
-        // 有可能target是Swift对象
-        NSString *an = [NSString stringWithFormat:@"%@%@",[actionName substringToIndex:1].uppercaseString,[actionName substringFromIndex:1]];
-        actionString = [NSString stringWithFormat:@"from%@WithParams:", an];
-        action = NSSelectorFromString(actionString);
-        if ([target respondsToSelector:action]) {
-            return [self safePerformAction:action
-                                    target:target
-                                    params:params
-                                      from:from
-                                completion:completion ];
-        } else {
-            return nil;
-        }
+        return [self safePerformAction:action target:target intentData:intentData];
     }
+    return nil;
 }
 
 + (void)clearTarget:(NSString *)urlString {
@@ -181,19 +160,13 @@ static NSArray<NSString *> *_kIntentSchemes = nil;
 
 - (id)safePerformAction:(SEL)action
                  target:(NSObject *)target
-                 params:(NSDictionary *)params
-                   from:(id)from
-             completion:(JDIntentCompletion)completion {
+             intentData:(JDIntentData *)intentData {
     NSMethodSignature *methodSig = [target methodSignatureForSelector:action];
     if(methodSig == nil) {
         return nil;
     }
     NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSig];
-    [invocation setArgument:&from atIndex:2];
-    [invocation setArgument:&params atIndex:3];
-    if(methodSig.numberOfArguments == 5){
-        [invocation setArgument:&completion atIndex:4];
-    }
+    [invocation setArgument:&intentData atIndex:2];
     [invocation setSelector:action];
     [invocation setTarget:target];
     [invocation invoke];
@@ -238,5 +211,11 @@ static NSArray<NSString *> *_kIntentSchemes = nil;
 
     return cache;
 }
+
+@end
+
+
+@implementation JDIntentData
+
 
 @end
