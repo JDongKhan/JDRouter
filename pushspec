@@ -12,7 +12,7 @@ specfilename=$(ls | grep .podspec | head -1)
 if [[ $version != "" ]]; then
 
     echo "======开始修改spec文件版本号======"
-    sed -i "" "s/spec.version.*=.*/spec.version      = '$version' /g" ${specfilename}
+    sed -i "" "s/s.version.*=.*/s.version      = '$version' /g" ${specfilename}
 
     if [ $? -ne 0 ]; then
         echo "修改spec文件失败"
