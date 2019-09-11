@@ -95,7 +95,7 @@ NSString *userName = user.userName;
 
 ```c
 
-[JDIntent openUrl:@"Bababus://user/gotoNext" completion:^(id info) {
+[JDIntent openUrl:@"bb://user/gotoNext" completion:^(id info) {
 NSLog(@"%@",info);
 }];
 ```
