@@ -28,7 +28,7 @@
 return [[JDModuleManager sharedInstance] application:application  didFinishLaunchingWithOptions:launchOptions];
 ```
 
-可查看https://github.com/JDongKhan/JDComponentBased.git使用细则
+可查看  https://github.com/JDongKhan/JDComponentBased.git  使用细则
 
 
 
