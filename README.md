@@ -68,8 +68,6 @@ NSString *userName = user.userName;
 
 3、让类实现handleWithLink:parameters:routerFrom:即可。
 
-2、让类实现handleWithLink:parameters:routerFrom:即可。
-
 4、使用者就可以通过openURL来跳转了。
 
 如下
